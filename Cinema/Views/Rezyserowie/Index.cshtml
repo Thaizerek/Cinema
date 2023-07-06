@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Cinema.Models.Rezyserowie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RezyserZdjecieURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RezyserImieNazwisko)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RezyserBiografia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RezyserZdjecieURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RezyserImieNazwisko)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RezyserBiografia)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RezyserId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RezyserId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RezyserId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

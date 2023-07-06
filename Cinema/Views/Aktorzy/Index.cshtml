@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Cinema.Models.Aktorzy>
+
+@{
+    ViewData["Title"] = "Lista aktorów";
+}
+
+<h1>Widok aktorów - Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AktorZdjecieURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AktorImieNazwisko)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AktorBiografia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.AktorZdjecieURL)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.AktorImieNazwisko)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.AktorBiografia)
+            </td>
+            <td class="align-middle">
+                <a asp-action="Edit" asp-route-id="@item.AktorId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AktorId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AktorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
