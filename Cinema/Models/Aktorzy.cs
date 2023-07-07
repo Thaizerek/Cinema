@@ -11,8 +11,11 @@ namespace Cinema.Models
         [Key]
         public int AktorId { get; set; }
 
+        [Display(Name = "Zdjęcie")]
         public string AktorZdjecieURL { get; set; }
+        [Display(Name = "Imię i nazwisko aktora")]
         public string AktorImieNazwisko { get; set; }
+        [Display(Name = "Biografia aktora")]
         public string AktorBiografia { get; set; }
 
         //Relacje:
