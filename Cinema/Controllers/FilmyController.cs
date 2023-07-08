@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cinema.Data;
 using Cinema.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Cinema.Controllers
 {
+    [Authorize]
     public class FilmyController : Controller
     {
         private readonly CinemaContext _context;
@@ -26,6 +28,7 @@ namespace Cinema.Controllers
         }
 
         // GET: Filmy/Details/5
+        [Authorize(Roles ="Administrator")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,6 +47,7 @@ namespace Cinema.Controllers
         }
 
         // GET: Filmy/Create
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -66,6 +70,7 @@ namespace Cinema.Controllers
         }
 
         // GET: Filmy/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -117,6 +122,7 @@ namespace Cinema.Controllers
         }
 
         // GET: Filmy/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

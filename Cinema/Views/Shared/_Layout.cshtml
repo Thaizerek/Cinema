@@ -10,9 +10,9 @@
 </head>
 <body style="background-color:lightyellow;">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: burlywood">
             <div class="container-fluid">
-                <a class="btn" asp-area="" asp-controller="Filmy" asp-action="Index" style="border-color:black;"><i class="bi bi-house-door-fill"></i></a>
+                <a class="btn" asp-area="" asp-controller="Home" asp-action="Index" style="border-color:black;"><i class="bi bi-house-door-fill"></i></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -22,6 +22,9 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="navbar-nav flex-grow-1">
 
+                        </li>
+                        <li>
+                            <a class="btn" asp-controller="Filmy" asp-action="Index"><i class="bi bi-film"></i>Filmy</a>
                         </li>
                         <li class="nav-item">
                             <a class="btn" asp-controller="Rezyserowie" asp-action="Index"><i class="bi bi-headset"></i>Reżyserowie</a>
