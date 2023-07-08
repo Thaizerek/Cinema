@@ -18,7 +18,7 @@ namespace Cinema.Areas.Identity
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<CinemaContextIdentity>(options =>
                     options.UseSqlServer(
-                        context.Configuration.GetConnectionString("CinemaContextIdentityConnection")));
+                        context.Configuration.GetConnectionString("CinemaContext")));
 
                 services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<CinemaContextIdentity>();
