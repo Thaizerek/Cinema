@@ -47,7 +47,7 @@ namespace Cinema.Controllers
         }
 
         // GET: Filmy/Create
-        [Authorize(Roles = "Administrator")]
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -70,7 +70,7 @@ namespace Cinema.Controllers
         }
 
         // GET: Filmy/Edit/5
-        [Authorize(Roles = "Administrator")]
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -122,7 +122,7 @@ namespace Cinema.Controllers
         }
 
         // GET: Filmy/Delete/5
-        [Authorize(Roles = "Administrator")]
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
