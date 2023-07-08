@@ -29,6 +29,7 @@ namespace Cinema
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+           // services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<CinemaContext>();
            /* 
               services.AddMvc().AddRazorPagesOptions(opt => {
                 opt.RootDirectory = "/Identity";
@@ -67,7 +68,7 @@ namespace Cinema
                 endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Filmy}/{action=Index}/{id?}");
             });
         }
     }
