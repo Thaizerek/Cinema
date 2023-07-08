@@ -13,9 +13,9 @@ namespace Cinema.Migrations
                 {
                     AktorId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AktorZdjecieURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AktorImieNazwisko = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AktorBiografia = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    AktorZdjecieURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AktorImieNazwisko = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AktorBiografia = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

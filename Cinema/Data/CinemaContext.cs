@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Cinema.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Cinema.Data
 {
-    public class CinemaContext : DbContext
+    public class CinemaContext : IdentityDbContext
     {
         public CinemaContext (DbContextOptions<CinemaContext> options)
             : base(options)

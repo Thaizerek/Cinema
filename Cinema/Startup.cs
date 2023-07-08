@@ -4,12 +4,14 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Cinema.Data;
+using Cinema.Models;
 
 namespace Cinema
 {
@@ -26,6 +28,12 @@ namespace Cinema
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
+           /* 
+              services.AddMvc().AddRazorPagesOptions(opt => {
+                opt.RootDirectory = "/Identity";
+            });
+           */
 
             services.AddDbContext<CinemaContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("CinemaContext")));
@@ -49,10 +57,14 @@ namespace Cinema
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            //app.MapRazorPages();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
